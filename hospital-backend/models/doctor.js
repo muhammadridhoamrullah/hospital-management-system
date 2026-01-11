@@ -29,13 +29,46 @@ module.exports = (sequelize, DataTypes) => {
   }
   Doctor.init(
     {
-      UserId: DataTypes.INTEGER,
-      DepartmentId: DataTypes.INTEGER,
-      licenseNumber: DataTypes.STRING,
+      UserId: {
+        type: DataTypes.INTEGER,
+        unique: {
+          msg: "UserId must be unique",
+        },
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "UserId is required",
+          },
+          notEmpty: {
+            msg: "UserId is required",
+          },
+        },
+      },
+      DepartmentId: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      licenseNumber: {
+        type: DataTypes.STRING,
+        unique: {
+          msg: "License Number must be unique",
+        },
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "License Number is required",
+          },
+          notEmpty: {
+            msg: "License Number is required",
+          },
+        },
+      },
     },
     {
       sequelize,
       modelName: "Doctor",
+      paranoid: true,
+      timestamps: true,
     }
   );
   return Doctor;

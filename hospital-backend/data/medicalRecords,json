@@ -1,0 +1,8 @@
+[
+  {
+    "id": 1,
+    "appointment_id": 1,
+    "diagnosis": "Hypertension",
+    "notes": "Patient advised to reduce salt intake"
+  }
+]

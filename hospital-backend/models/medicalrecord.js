@@ -20,13 +20,43 @@ module.exports = (sequelize, DataTypes) => {
   }
   MedicalRecord.init(
     {
-      AppointmentId: DataTypes.INTEGER,
-      diagnosis: DataTypes.TEXT,
-      notes: DataTypes.TEXT,
+      AppointmentId: {
+        type: DataTypes.INTEGER,
+        unique: {
+          msg: "AppointmentId must be unique",
+        },
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "AppointmentId is required",
+          },
+          notEmpty: {
+            msg: "AppointmentId is required",
+          },
+        },
+      },
+      diagnosis: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Diagnosis is required",
+          },
+          notEmpty: {
+            msg: "Diagnosis is required",
+          },
+        },
+      },
+      notes: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
     },
     {
       sequelize,
       modelName: "MedicalRecord",
+      paranoid: true,
+      timestamps: true,
     }
   );
   return MedicalRecord;

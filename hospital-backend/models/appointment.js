@@ -24,15 +24,73 @@ module.exports = (sequelize, DataTypes) => {
   }
   Appointment.init(
     {
-      PatientId: DataTypes.INTEGER,
-      DoctorId: DataTypes.INTEGER,
-      appointmentDate: DataTypes.DATE,
-      appointmentTime: DataTypes.TIME,
-      status: DataTypes.STRING,
+      PatientId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "PatientId is required",
+          },
+          notEmpty: {
+            msg: "PatientId is required",
+          },
+        },
+      },
+      DoctorId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "DoctorId is required",
+          },
+          notEmpty: {
+            msg: "DoctorId is required",
+          },
+        },
+      },
+      appointmentDate: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Appointment Date is required",
+          },
+          notEmpty: {
+            msg: "Appointment Date is required",
+          },
+        },
+      },
+      appointmentTime: {
+        type: DataTypes.TIME,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Appointment Time is required",
+          },
+          notEmpty: {
+            msg: "Appointment Time is required",
+          },
+        },
+      },
+      status: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "scheduled",
+        validate: {
+          notNull: {
+            msg: "Status is required",
+          },
+          notEmpty: {
+            msg: "Status is required",
+          },
+        },
+      },
     },
     {
       sequelize,
       modelName: "Appointment",
+      paranoid: true,
+      timestamps: true,
     }
   );
   return Appointment;

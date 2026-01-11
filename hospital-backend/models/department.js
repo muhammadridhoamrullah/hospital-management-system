@@ -16,12 +16,39 @@ module.exports = (sequelize, DataTypes) => {
   }
   Department.init(
     {
-      name: DataTypes.STRING,
-      description: DataTypes.TEXT,
+      name: {
+        type: DataTypes.STRING,
+        unique: {
+          msg: "Department Name must be unique",
+        },
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Department Name is required",
+          },
+          notEmpty: {
+            msg: "Department Name is required",
+          },
+        },
+      },
+      description: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Description is required",
+          },
+          notEmpty: {
+            msg: "Description is required",
+          },
+        },
+      },
     },
     {
       sequelize,
       modelName: "Department",
+      paranoid: true,
+      timestamps: true,
     }
   );
   return Department;

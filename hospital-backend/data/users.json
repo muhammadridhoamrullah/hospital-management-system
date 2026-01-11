@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Admin Hospital",
+    "email": "admin@hospital.com",
+    "password": "1234567890",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Andi Pratama",
+    "email": "andi@hospital.com",
+    "password": "1234567890",
+    "role": "doctor"
+  },
+  {
+    "id": 3,
+    "name": "Siti Rahma",
+    "email": "siti@patient.com",
+    "password": "1234567890",
+    "role": "patient"
+  }
+]
