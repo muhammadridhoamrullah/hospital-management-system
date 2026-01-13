@@ -12,5 +12,18 @@ export async function registerUser(user: UserModelInput) {
     updatedAt: new Date(),
   });
 
-  return result;
+  return {
+    _id: result.insertedId.toString(),
+    ...user,
+  };
+}
+
+export async function findUserByEmail(email: string) {
+  const db = await getDB();
+
+  const findUser = await db.collection(COLL).findOne({
+    email,
+  });
+
+  return findUser;
 }

@@ -14,3 +14,8 @@ export interface UserModelInput {
   password: string;
   role: "admin" | "doctor" | "nurse" | "patient";
 }
+
+export interface UserLoginInput {
+  email: string;
+  password: string;
+}
