@@ -12,12 +12,12 @@ export default function NonAuthLayout() {
         {/* Awal Judul */}
         <h1 className="font-bold text-3xl flex justify-start items-center gap-3">
           <GiHospitalCross />
-          <h1>MediCare</h1>
+          <span>MediCare</span>
         </h1>
         {/* Akhir Judul */}
         {/* Awal Informasi */}
         <div className=" w-full h-full flex flex-col gap-4">
-          <h1 className="text-4xl font-bold">Hospital Management System</h1>
+          <span className="text-4xl font-bold">Hospital Management System</span>
           <p className="text-lg font-semibold">
             Secure and efficient management of hospital operations, patient
             records, and staff coordination.
