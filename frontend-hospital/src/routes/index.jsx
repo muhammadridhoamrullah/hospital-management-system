@@ -3,6 +3,7 @@ import NonAuthLayout from "../layouts/(Non-Auth)/NonAuthLayout";
 import { preventAuth, requireAuth } from "./authLoader";
 import MainLayout from "../layouts/(Auth)/MainLayout";
 import NotFound from "../components/NotFound";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
         element: <NonAuthLayout />,
         loader: preventAuth,
         children: [
-          { path: "/login", element: <div>Login</div> },
+          { path: "/login", element: <Login /> },
           {
             path: "/register",
             element: <div>Register</div>,
