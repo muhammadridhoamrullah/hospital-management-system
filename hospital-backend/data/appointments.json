@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "patient_id": 1,
-    "doctor_id": 1,
-    "appointment_date": "2026-01-15",
-    "appointment_time": "09:30",
+    "PatientId": 1,
+    "DoctorId": 1,
+    "appointmentDate": "2026-01-15",
+    "appointmentTime": "09:30",
     "status": "CONFIRMED"
   }
 ]

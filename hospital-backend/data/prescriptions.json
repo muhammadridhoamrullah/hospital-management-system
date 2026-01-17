@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
-    "medical_record_id": 1
+    "MedicalRecordId": 1,
+    "DoctorId": 1
   }
 ]
