@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "PrescriptionId": 1,
+    "medicineName": "Amlodipine",
+    "quantity": 30,
+    "dosage": "1 tablet per day"
+  }
+]

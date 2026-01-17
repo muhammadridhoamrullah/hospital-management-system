@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "DoctorId": 1,
+    "dayOfWeek": "MON",
+    "startTime": "09:00",
+    "endTime": "12:00"
+  },
+  {
+    "id": 2,
+    "DoctorId": 1,
+    "dayOfWeek": "WED",
+    "startTime": "13:00",
+    "endTime": "16:00"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Cardiology",
+    "description": "Heart and blood vessel specialist"
+  },
+  {
+    "id": 2,
+    "name": "Neurology",
+    "description": "Brain and nervous system specialist"
+  }
+]

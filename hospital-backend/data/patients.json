@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "UserId": 3,
+    "medicalRecordNumber": "MR-2025-001",
+    "birthDate": "1998-05-12",
+    "gender": "female"
+  }
+]
