@@ -1,11 +1,17 @@
 const { UserServices } = require("../services/userServices");
 
 class UserController {
-  static async test(req, res, next) {
+  static async login(req, res, next) {
     try {
-      const data = await UserServices.testService();
+      const { email, password } = req.body;
 
-      res.status(200).json({ message: data });
+      const login = await UserServices.login({ email, password });
+
+      res.status(200).json({
+        success: true,
+        data: login.access_token,
+        message: "User logged in successfully",
+      });
     } catch (error) {
       next(error);
     }
