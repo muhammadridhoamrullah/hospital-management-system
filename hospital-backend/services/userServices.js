@@ -28,6 +28,16 @@ class UserServices {
 
     return { access_token };
   }
+
+  static async getMyProfile(UserId) {
+    const user = await User.findByPk(UserId, {
+      attributes: {
+        exclude: ["password"],
+      },
+    });
+
+    return user;
+  }
 }
 
 module.exports = {

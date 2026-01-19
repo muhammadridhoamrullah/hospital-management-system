@@ -8,6 +8,8 @@ userRouter.post("/login", UserController.login);
 // Route di bawah ini butuh authentication
 userRouter.use(authentication);
 
+userRouter.get("/my-profile", UserController.getMyProfile)
+
 module.exports = {
   userRouter,
 };
