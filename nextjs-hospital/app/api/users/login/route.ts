@@ -1,4 +1,4 @@
-import { loginUser } from "@/app/db/services/user.service";
+import { loginUser } from "@/db/services/user.service";
 import { NextRequest, NextResponse } from "next/server";
 import z, { success } from "zod";
 
@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       },
       {
         status: 200,
-      }
+      },
     );
   } catch (error) {
     if (error instanceof z.ZodError) {
@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
         },
         {
           status: 400,
-        }
+        },
       );
     } else if (error instanceof Error) {
       return NextResponse.json(
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
         },
         {
           status: 500,
-        }
+        },
       );
     } else {
       return NextResponse.json(
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
         },
         {
           status: 500,
-        }
+        },
       );
     }
   }
