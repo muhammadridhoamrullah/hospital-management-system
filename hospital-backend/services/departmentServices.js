@@ -21,6 +21,12 @@ class DepartmentServices {
 
     return newDepartment;
   }
+
+  static async getDepartments() {
+    const departments = await Department.findAll();
+
+    return departments;
+  }
 }
 
 module.exports = {

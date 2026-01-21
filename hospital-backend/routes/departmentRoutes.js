@@ -11,6 +11,7 @@ departmentRouter.post(
   authorization(["admin"]),
   DepartmentController.createDepartment,
 );
+departmentRouter.get("/", DepartmentController.getAllDepartments);
 
 module.exports = {
   departmentRouter,

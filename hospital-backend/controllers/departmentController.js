@@ -21,6 +21,22 @@ class DepartmentController {
       next(error);
     }
   }
+
+  static async getAllDepartments(req, res, next) {
+    try {
+      const departments = await DepartmentServices.getDepartments();
+
+      res.status(200).json({
+        success: true,
+        data: departments,
+        message: "Departments retrieved successfully",
+      });
+    } catch (error) {
+      console.log(error, "err");
+
+      next(error);
+    }
+  }
 }
 
 module.exports = {
